@@ -9,4 +9,12 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('/about')
+  getAbout() {
+    return {
+      name: 'Coleção de Camisas',
+      description: 'Catálogo pessoal de camisas e jaquetas de futebol',
+    };
+  }
 }
