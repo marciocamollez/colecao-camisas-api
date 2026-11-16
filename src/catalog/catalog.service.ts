@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
+import { CatalogItem } from './interfaces/catalog-item.interface';
 @Injectable()
 export class CatalogService {
-  findAll() {
+  findAll(): CatalogItem[] {
     return [
       {
         id: 'CAM-0001',
