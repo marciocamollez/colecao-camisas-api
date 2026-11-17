@@ -6,7 +6,7 @@ import { CatalogItem } from './interfaces/catalog-item.interface';
 export class CatalogService {
   private readonly catalog: CatalogItem[] = [
     {
-      id: 'CAM-0001',
+      slug: 'camisa-palmeiras-puma-2026-home',
       team: 'Palmeiras',
       season: '2024',
       brand: 'Puma',
@@ -16,7 +16,7 @@ export class CatalogService {
       status: 'Coleção',
     },
     {
-      id: 'CAM-0002',
+      slug: 'camisa-nottingham-forest-adidas-2023-away',
       team: 'Nottingham Forest',
       season: '2023',
       brand: 'Adidas',
@@ -31,7 +31,7 @@ export class CatalogService {
     return this.catalog;
   }
 
-  findOne(id: string): CatalogItem | undefined {
-    return this.catalog.find((item) => item.id === id);
+  findOne(slug: string): CatalogItem | undefined {
+    return this.catalog.find((item) => item.slug === slug);
   }
 }

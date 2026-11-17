@@ -1,5 +1,5 @@
 export interface CatalogItem {
-  id: string;
+  slug: string;
   team: string;
   season: string;
   brand: string | null;

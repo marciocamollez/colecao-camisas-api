@@ -10,8 +10,8 @@ export class CatalogController {
     return this.catalogService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.catalogService.findOne(id);
+  @Get(':slug')
+  findOne(@Param('slug') slug: string) {
+    return this.catalogService.findOne(slug);
   }
 }
