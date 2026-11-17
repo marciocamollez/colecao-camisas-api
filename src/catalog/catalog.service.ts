@@ -1,5 +1,5 @@
 
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CatalogItem } from './interfaces/catalog-item.interface';
 
 @Injectable()
@@ -31,7 +31,15 @@ export class CatalogService {
     return this.catalog;
   }
 
-  findOne(slug: string): CatalogItem | undefined {
-    return this.catalog.find((item) => item.slug === slug);
+  findOne(slug: string): CatalogItem {
+    const item = this.catalog.find(
+      (item) => item.slug === slug,
+    );
+
+    if (!item) {
+      throw new NotFoundException('Peça não encontrada');
+    }
+
+    return item;
   }
 }
